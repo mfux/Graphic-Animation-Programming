@@ -4,19 +4,19 @@ set ur[0.01:5]
 set vr[0:4*pi]
 
 unset border
-unset ytics 
-unset xtics 
-unset ztics 
+set ytics
+set xtics
+set ztics
 
 i={0,1}
-splot u*cos(v),u*sin(v),real(sqrt(u)*exp(i*0.5*v))
-unset ytics 
-unset xtics 
-unset ztics 
+splot u*v,u*sin(v),real(sqrt(u)*exp(i*0.5*v))
+set ytics
+set xtics
+set ztics
 #set term gif animate optimize size 480,360
 #set output 'movie.gif'
 
-do for [j = 0:900 ] {
+do for [j = 200:900 ] {
    if(j < 100) {
        set view 180,j,1,1
        replot
